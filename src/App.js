@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/card";
+import Navbar from "./components/Navbar";
 
 function App() {
+  let arr = [
+    {name:'Poornima',
+    id:101,
+    qlfn:'BE'},
+
+    {name:'Manosmita',
+      id:102,
+      qlfn:'BE'},
+
+    {name:'Ashu',
+      id:103,
+      qlfn:'MCA'},
+
+    {name:'Sweta',
+      id:104,
+      qlfn:'BE'}
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <Navbar/>
+   <section className='container-fluid mt-4'>
+      <div className='row mt-4'>
+        {arr.map((ele)=>{
+          return(<Card data={ele}/>)
+        })}
+      </div>
+   </section>
+   </>
   );
 }
-
 export default App;
